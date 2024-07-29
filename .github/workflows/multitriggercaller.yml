@@ -1,7 +1,14 @@
 name: Multiple triggers caller workflow
 
 on:
-  push
+  push: 
+  workflow_dispatch:
+    inputs:
+      dispatchparam:
+        default: 'a default value'
+    overrides:
+      workflowparam:
+        value: ${{ vars.PLATFORMPROP }}
   
 jobs:
   call-workflow:
