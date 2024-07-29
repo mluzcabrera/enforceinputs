@@ -1,0 +1,10 @@
+name: Multiple triggers caller workflow
+
+on:
+  push
+  
+jobs:
+  call-workflow:
+    uses: mluzcabrera/enforceinputs/.github/workflows/real-workflow.yml@main
+    with:
+      who-to-greet: "Maria de la Luz"
